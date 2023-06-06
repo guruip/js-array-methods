@@ -1,8 +1,8 @@
 const map = (arr, callback) => {
-    let newArr = [];
+    const newArr = [];
 
     for (let i = 0; i < arr.length; i++) {
-        newArr.push(callback(i + 1))
+        newArr.push(callback(arr[i]));
     }
 
     return newArr;
