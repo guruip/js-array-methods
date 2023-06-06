@@ -1,6 +1,6 @@
-const includes = (arr, el) => {
-    for (let elem of arr) {
-            if (elem === el) {
+const includes = (array, searchElement) => {
+    for (const element of array) {
+        if (element === searchElement) {
             return true;
         }
     }
