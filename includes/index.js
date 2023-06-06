@@ -6,4 +6,6 @@ const includes = (array, searchElement) => {
     }
 
     return false;
-}
+};
+
+module.exports.includes = includes;
