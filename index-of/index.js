@@ -7,3 +7,5 @@ const indexOf = (arr, el) => {
 
     return -1;
 }
+
+module.exports.indexOf = indexOf;

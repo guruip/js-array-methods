@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha.js"
+    "test": "./node_modules/mocha/bin/mocha.js ./*/test.js"
   },
   "author": "Guruip",
   "license": "ISC",

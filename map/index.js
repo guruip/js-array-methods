@@ -7,3 +7,5 @@ const map = (arr, callback) => {
 
     return newArr;
 }
+
+module.exports.map = map;
