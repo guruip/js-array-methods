@@ -2,7 +2,7 @@ const assert = require('assert');
 const { forEach } = require('./index');
 
 describe('forEach()', () => {
-    it('Аргументы в callback передаются коректро', (done) => {
+    it('Аргументы в callback передаются корректно', (done) => {
         let callbackCallsCount = 0;
         const inputArray = [1, 2, 3];
         const callsArguments = {
