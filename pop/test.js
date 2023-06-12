@@ -3,9 +3,27 @@ const { pop } = require('./index');
 
 describe('pop()', () => {
     it('Длина массива изменилась', () => {
-        assert.equal(pop([1, 2, 3].length), 2);
+        const array = ['a', 'b', 'c', 'd'];
+
+        pop(array);
+        assert.equal(array.length, 3);
     });
-    it('Длина массива не изменилась', () => {
-        assert.equal(pop([]).length, 0);
+    it('Массив возвращает элемент', () => {
+        assert.equal(pop(['a', 'b', 'c', 'd']), 'd');
+    });
+    it('Массив изменяется ожидаемо', () => {
+        const array = ['a', 'b', 'c', 'd'];
+
+        pop(array);
+        assert.deepEqual(array, ['a', 'b', 'c']);
+    });
+    it('Возвращается тот же массив', () => {
+        const array = ['a', 'b', 'c', 'd'];
+
+        pop(array);
+        assert.equal(array, array);
+    });
+    it('Массив пуст', () => {
+        assert.equal(pop([]), undefined);
     });
 });
