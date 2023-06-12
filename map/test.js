@@ -1,5 +1,6 @@
 const assert = require('assert');
 const { map } = require('./index');
+const { testArrayMethodCallback } = require('../shared/test/array-method-callback.test');
 
 describe('map()', () => {
     it('Элементы массива возводятся в куб', () => {
@@ -12,4 +13,5 @@ describe('map()', () => {
             return null;
         }), []);
     });
+    testArrayMethodCallback(map);
 });
