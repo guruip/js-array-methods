@@ -3,15 +3,15 @@ const { filter } = require('./index');
 
 describe('filter()', () => {
     it('Возвращает отфильтрованный массив', () => {
-        assert.deepEqual(filter([1, 2, 3, 4], el => {
-            if (el > 2) {
-                return el;  
-            }   
-        }), [3, 4]);
+        assert.deepEqual(filter(['a', 'b', 'c', 'd'], el => el > 'b'), ['c', 'd']);
     });
     it('Массив пуст', () => {
-        assert.deepEqual(filter([], () => {
-            return null;
-        }), []);
+        assert.deepEqual(filter([], () => false), []);
+    });
+    it('Входящий массив не изменяется', () => {
+        assert.deepEqual(filter(['g', 'b', 'c', 'd'], el => true), ['g', 'b', 'c', 'd']);
+    });
+    it('Возращается пустрой массив так как ни один элемент не соответствует условию функции', () => {
+        assert.deepEqual(filter(['g', 'b', 'c', 'd'], el => false), []);
     });
 });

@@ -1,9 +1,9 @@
 const filter = (arr, callback) => {
-    let newArr = [];
-
+    const newArr = [];
+    
     for (let i = 0; i < arr.length; i++) {
-        if(callback(arr[i])) {
-            newArr.push(callback(arr[i]));
+        if (callback(arr[i], i ,arr)) {
+            newArr.push(arr[i]);
         }
     }
     
