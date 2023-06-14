@@ -19,4 +19,10 @@ describe('push()', () => {
         push(array, element);
         assert.deepEqual(array, ['a', 'b', 'c', 'd', '1']);
     });
+    it('Массив изменяется ожидаемо при push нескольких элементов', () => {
+        const array = ['a', 'b', 'c', 'd'];
+
+        push(array, 'e', 'f', 'g');
+        assert.deepEqual(array, ['a', 'b', 'c', 'd', 'e', 'f', 'g']);
+    });
 });
