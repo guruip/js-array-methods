@@ -10,4 +10,4 @@ describe('findindex()', () => {
         assert.equal(findindex(['a', 'b', 'c', 'd'], el => false), -1)
     });
     testArrayMethodCallback(findindex);
-})
+});
