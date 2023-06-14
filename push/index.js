@@ -1,11 +1,6 @@
-const push = (array, elementN) => {
-    
-    if (Array.isArray(elementN)) {
-        for (let i = 0; i < elementN.length; i++) {
-            array[array.length] = elementN[i];
-        }
-    } else {
-        array[array.length] = elementN;
+const push = (array, ...args) => {
+    for (let i = 0; i < args.length; i++) {
+        array[array.length] = args[i];
     }
 
     return array.length;
