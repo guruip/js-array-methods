@@ -12,5 +12,5 @@ describe('findLastIndex()', () => {
     it('Вернулся элемент удовлетворяющий условию функции callback', () => {
         assert.equal(findLastIndex(['a', 'b', 'c', 'b', 'd'], el => el === 'b'), 3);
     });
-    testArrayMethodCallback(findLastIndex);
+    testArrayMethodCallback(findLastIndex, true);
 });
