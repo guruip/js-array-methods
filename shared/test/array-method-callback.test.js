@@ -1,29 +1,24 @@
 const assert = require('assert');
 
-module.exports.testArrayMethodCallback = (arrayMethod) => {
+module.exports.testArrayMethodCallback = (arrayMethod, isReverted = false) => {
     it('Аргументы в callback передаются корректно', (done) => {
         let callbackCallsCount = 0;
         const mockArray = ['a', 'b', 'c'];
-        const mockArguments = [
-            { element: 'a', index: 0, array: mockArray },
-            { element: 'b', index: 1, array: mockArray },
-            { element: 'c', index: 2, array: mockArray }
-        ];
-        const testArguments = (element, index, array) => {
-            const arguments = mockArguments[callbackCallsCount - 1];
 
+        arrayMethod(mockArray, (element, index, array) => {
+            callbackCallsCount++;
+            
             if (callbackCallsCount > 3) {
                 done('Callback был вызван более 3 раз!');
             }
 
-            assert.equal(element, arguments.element, 'Аргумент element не был передан!');
-            assert.equal(index, arguments.index, 'Аргумент index не был передан!');
-            assert.equal(array, arguments.array, 'Аргумент array не был передан!');
-        };
+            const mockIndex = isReverted
+                ? mockArray.length - callbackCallsCount
+                : callbackCallsCount - 1;
 
-        arrayMethod(mockArray, (element, index, array) => {
-            callbackCallsCount++;
-            testArguments(element, index, array);
+            assert.equal(element, mockArray[mockIndex]);
+            assert.equal(index, mockIndex);
+            assert.equal(array, mockArray);
         });
 
         done();
